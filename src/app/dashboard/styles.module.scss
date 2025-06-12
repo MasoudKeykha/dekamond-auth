@@ -1,0 +1,15 @@
+@import './../../styles/breakpoints.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    margin: 5rem 0;
+
+    @include bp("md") {
+      margin: 10rem 0;
+    }
+  }
+}

@@ -3,6 +3,8 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
+import styles from "./styles.module.scss";
+
 const Dashboard = () => {
   const router = useRouter();
 
@@ -14,8 +16,8 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Welcome to the Dashboard</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Welcome to the Dashboard</h1>
     </div>
   );
 }
