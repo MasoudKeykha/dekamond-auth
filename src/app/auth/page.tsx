@@ -11,7 +11,8 @@ const AuthPage = () => {
   const [phone, setPhone] = useState("");
   const router = useRouter();
 
-  const handleLogin = async () => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const iranPhoneRegex = /^(\+98|0)?9\d{9}$/;
     if (!iranPhoneRegex.test(phone)) {
       alert("Please enter a valid Iranian phone number!");
@@ -32,15 +33,15 @@ const AuthPage = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <form onSubmit={handleLogin} className={styles.container}>
       <h1 className={styles.title}>Login</h1>
       <Input
         value={phone}
         onChange={setPhone}
         placeholder="Enter Iranian phone number"
       />
-      <Button text="Login" onClick={handleLogin} />
-    </div>
+      <Button type="submit" text="Login" />
+    </form>
   );
 };
 

@@ -1,13 +1,18 @@
 import styles from './Button.module.scss';
 
 interface ButtonProps {
+  type?: 'button' | 'submit';
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
-const Button = ({ text, onClick }: ButtonProps) => {
+const Button = ({ type, text, onClick }: ButtonProps) => {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button
+      type={type}
+      className={styles.button}
+      onClick={onClick}
+    >
       {text}
     </button>
   );
