@@ -1,12 +1,23 @@
-.input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+.inputContainer {
+  display: flex;
+  flex-direction: column;
 
-  &:focus {
-    border-color: blue;
-    outline: none;
+  .input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+
+    &:focus {
+      border-color: blue;
+      outline: none;
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
   }
 }
